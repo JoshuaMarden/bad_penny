@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "bbb543e2dc76c70b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9d9278231fb276b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "297959ee9ffa66ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project Structure.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e1fe3f3b9ba14bc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tools,  Libraries, & Data Sources.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fe3b4dc42a9aef0e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tools,  Libraries, & Data Sources.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "47e443c9c39c299e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project Proposal.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "23abf085a963aedf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tools,  Libraries, & Data Sources.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4481d2919c82d253",
+    "type": "split",
+    "children": [
+      {
+        "id": "fdd58dd5183b2894",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f4942b9157a2c77a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3b2c5119dc28d16f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f7e69a9215315bbc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f66008d2253a87c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "e5e0e1145b8af6ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4e80e17e9087888d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tools,  Libraries, & Data Sources.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3bfaf30a457039d6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Tools,  Libraries, & Data Sources.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "200a7a7c932f8713",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b8b5b5f3c60c91be",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tools,  Libraries, & Data Sources.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "fe3b4dc42a9aef0e",
+  "lastOpenFiles": [
+    "Project Proposal.md",
+    "Project Coding Philosophy.md",
+    "Project Structure.md",
+    "Tools,  Libraries, & Data Sources.md",
+    "Untitled 1.md",
+    "Excalidraw/Timetable.md",
+    "Excalidraw",
+    "Images",
+    "Untitled 1"
+  ]
+}
