@@ -1,0 +1,11 @@
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/libsqlx-151d350467926cf5.rmeta: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/any/mod.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/macros/mod.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/ty_match.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/lib.md /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/macros/test.md /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/any/install_drivers_note.md
+
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/sqlx-151d350467926cf5.d: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/any/mod.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/macros/mod.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/ty_match.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/lib.md /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/macros/test.md /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/any/install_drivers_note.md
+
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/lib.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/any/mod.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/macros/mod.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/ty_match.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/lib.md:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/macros/test.md:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sqlx-0.7.4/src/any/install_drivers_note.md:

@@ -1,0 +1,9 @@
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/libhyper_rustls-051f3e8c4985f24c.rmeta: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/config.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/connector.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/connector/builder.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/stream.rs
+
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/hyper_rustls-051f3e8c4985f24c.d: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/config.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/connector.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/connector/builder.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/stream.rs
+
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/lib.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/config.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/connector.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/connector/builder.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-rustls-0.27.3/src/stream.rs:
