@@ -1,0 +1,9 @@
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/libpostgres_types-f00288a57662c97c.rmeta: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/pg_lsn.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/private.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/special.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/type_gen.rs
+
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/postgres_types-f00288a57662c97c.d: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/pg_lsn.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/private.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/special.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/type_gen.rs
+
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/lib.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/pg_lsn.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/private.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/special.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/postgres-types-0.2.7/src/type_gen.rs:
