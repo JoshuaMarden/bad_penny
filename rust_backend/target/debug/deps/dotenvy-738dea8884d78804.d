@@ -1,0 +1,11 @@
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/libdotenvy-738dea8884d78804.rmeta: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/errors.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/find.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/iter.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/parse.rs
+
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/libdotenvy-738dea8884d78804.rlib: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/errors.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/find.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/iter.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/parse.rs
+
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/deps/dotenvy-738dea8884d78804.d: /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/lib.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/errors.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/find.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/iter.rs /Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/parse.rs
+
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/lib.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/errors.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/find.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/iter.rs:
+/Users/joshuasigma/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dotenvy-0.15.7/src/parse.rs:
