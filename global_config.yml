@@ -1,0 +1,14 @@
+# Where global variables are stored
+
+ons_website: "https://www.ons.gov.uk"
+
+data_sources:
+  ons_cpi_api: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7g7/mm23/data"
+  ons_nominal_petrol_api: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/czmk/mm23/data"
+  ons_nominal_diesel_api: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/czml/mm23/data"
+  ons_cpih_gas_api: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l53f/mm23/data"
+  ons_cpih_electricity_api: "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l53e/mm23/data"
+
+browser_emulation_details:
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"
+  accept_response: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
