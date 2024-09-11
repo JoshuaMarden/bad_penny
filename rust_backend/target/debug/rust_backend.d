@@ -1,1 +1,1 @@
-/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/rust_backend: /Users/joshuasigma/Projects/bad_penny/rust_backend/src/ingestion/ons_api.rs /Users/joshuasigma/Projects/bad_penny/rust_backend/src/main.rs
+/Users/joshuasigma/Projects/bad_penny/rust_backend/target/debug/rust_backend: /Users/joshuasigma/Projects/bad_penny/rust_backend/src/config.rs /Users/joshuasigma/Projects/bad_penny/rust_backend/src/ingestion/ons_api.rs /Users/joshuasigma/Projects/bad_penny/rust_backend/src/main.rs

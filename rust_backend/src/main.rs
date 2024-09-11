@@ -10,7 +10,6 @@ use reqwest::header::{USER_AGENT, ACCEPT};
 mod config;
 mod ingestion {
     pub mod ons_api;
-
 }
 
 // ╔═════════════════════════ ◈{ Run  Modules }◈ ══════════════════════════╗
@@ -18,8 +17,11 @@ mod ingestion {
 // Define the main entry point for the application
 #[tokio::main]  // If you are using async code, add this attribute
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Example: Call a function from `ons_api`
-    ingestion::ons_api::use_config_data()?;
+    // Step 1: Load the configuration using load_config
+    let config = config::load_config()?;  // Or you can use your `use_config_data` if it wraps this
+
+    // Step 2: Pass the `Config` object to `fetch_all_data`
+    ingestion::ons_api::fetch_all_data(&config).await?;  // Don't forget to await the async function
 
     Ok(())
 }

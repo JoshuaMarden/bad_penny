@@ -22,6 +22,7 @@ use crate::config::Config; // gets the struct `Config`
 
 
 // ╔═════════════════════════ ◈{ Import  Globals }◈ ══════════════════════════╗
+
 pub fn use_config_data() -> Result<(), Box<dyn std::error::Error>> {
     // Step 1: Load the configuration
     let config = config::load_config()?;
@@ -57,13 +58,12 @@ pub fn use_config_data() -> Result<(), Box<dyn std::error::Error>> {
 ///
 /// # Arguments
 ///
-/// * `config`
+/// * `config` - The configuration object with headers and URLs.
 ///
 /// # Returns
 ///
-/// This function returns `Ok(())` if the request is successful.
-/// or an `Err` containing a boxed dynamic error if any step fails (e.g., URL parsing or HTTP request).
-pub async fn send_spoofed_request(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+/// A `Client` with cookies enabled for reuse in other functions.
+pub async fn send_spoofed_request(config: &Config) -> Result<Client, Box<dyn std::error::Error>> {
     // Step 1: Set up the HTTP client with cookie support
     let cookie_jar = Arc::new(Jar::default());
     let client = Client::builder()
@@ -79,55 +79,51 @@ pub async fn send_spoofed_request(config: &Config) -> Result<(), Box<dyn std::er
         .get(url.clone())
         .header("User-Agent", &config.browser_emulation_details.user_agent)
         .header("Accept", &config.browser_emulation_details.accept_response)
+        .header("Referer", "https://www.ons.gov.uk/")
+        .header("Connection", "keep-alive")
+        .header("DNT", "1")
+        .body("Some additional body content to simulate real traffic") 
         .send()
         .await?;
 
-    // Handle the response
-    println!("Status: {}", response.status());
+    // Handle the response (check for success)
+    if response.status().is_success() {
+        println!("Initial spoofed request successful.");
+    } else {
+        println!("Initial spoofed request failed.");
+    }
 
-    Ok(())
+    // Return the client with cookie support
+    Ok(client)
 }
 
 
-/// Fetches data from a given API URL asynchronously.
+/// Fetches data from a given API URL asynchronously using the provided `Client`.
 ///
 /// Sends an HTTP GET request to the provided URL and returns 
 /// the response body as a `String`.
 ///
 /// # Arguments
 ///
-/// * `api_url` - A string *slice* containing the URL to fetch data from.
+/// * `client` - The `reqwest::Client` with cookies and headers configured.
+/// * `api_url` - A string slice containing the URL to fetch data from.
 ///
 /// # Returns
 ///
 /// Returns `Ok(String)` containing the response body if the request is successful;
 /// `Err(reqwest::Error)` if the request fails.
-pub async fn fetch_data(api_url: &str) -> Result<String, reqwest::Error> {
-    let response = reqwest::get(api_url).await?;
+pub async fn fetch_data(client: &Client, api_url: &str) -> Result<String, reqwest::Error> {
+    let response = client.get(api_url).send().await?;
     let response_text = response.text().await?;
     
     Ok(response_text)
 }
 
-/// Fetches data from all API URLs in the configuration concurrently.
-/// 
-/// Takes a `Config` obj, extracts all the API URLs from it, 
-/// uses asynchronous execution to fetch data from each URL concurrently. 
-/// It uses `futures::future::join_all` to execute multiple HTTP requests 
-/// in parallel.
-/// 
-/// # Arguments
-/// 
-/// * `config` - Ref to a `Config` object holding API URLs.
-/// 
-/// # Returns
-/// 
-/// `Ok(())` if all requests are successful; error if any fail. 
-/// Fetches data from all API URLs in the configuration concurrently.
-/// 
-/// Takes a `Config` object, extracts all the API URLs from the `data_sources` HashMap, 
-/// and uses asynchronous execution to fetch data from each URL concurrently.
-/// It uses `futures::future::join_all` to execute multiple HTTP requests in parallel.
+
+/// Fetches all the data from API URLs concurrently using spoofed headers and cookies.
+///
+/// Takes a `Config` object, extracts all the API URLs from the `data_sources` HashMap,
+/// and uses the `send_spoofed_request` function to fetch the data with cookies and headers.
 /// 
 /// # Arguments
 /// 
@@ -137,15 +133,17 @@ pub async fn fetch_data(api_url: &str) -> Result<String, reqwest::Error> {
 /// 
 /// `Ok(())` if all requests are successful; error if any fail.
 pub async fn fetch_all_data(config: &Config) -> Result<(), Box<dyn std::error::Error>> {
-    
-    // Step 1: Extract API URLs from the `data_sources` HashMap.
-    let api_urls = &config.data_sources;  // `data_sources` is a HashMap<String, String>
+    // Step 1: Get the client with cookies and spoofing configured
+    let client = send_spoofed_request(config).await?;
 
-    // Step 2: Create futures for each URL and collect them.
-    let fetch_futures = api_urls.values().map(|url| fetch_data(url));  // Iterate over the values (API URLs)
+    // Step 2: Extract API URLs from the `data_sources` HashMap
+    let api_urls = &config.data_sources; 
+
+    // Step 3: Create futures for each URL and collect them
+    let fetch_futures = api_urls.values().map(|url| fetch_data(&client, url));  // Pass the client
     let results = join_all(fetch_futures).await;  // Join all futures concurrently
 
-    // Step 3: Handle the results of each request.
+    // Step 4: Handle the results of each request
     for result in results {
         match result {
             Ok(data) => println!("Received data: {}", data),
@@ -155,3 +153,4 @@ pub async fn fetch_all_data(config: &Config) -> Result<(), Box<dyn std::error::E
 
     Ok(())
 }
+
