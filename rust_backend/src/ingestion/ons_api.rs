@@ -42,8 +42,6 @@ pub fn use_config_data() -> Result<(), Box<dyn std::error::Error>> {
     let user_agent = &config.browser_emulation_details.user_agent;
     let accept_response = &config.browser_emulation_details.accept_response;
 
-    // Implement logic where you use `ons_website`, `api_urls`, `user_agent`, etc.
-    // ...
 
     Ok(())
 }
