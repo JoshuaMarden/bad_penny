@@ -82,6 +82,11 @@ pub async fn send_spoofed_request(config: &Config) -> Result<Client, Box<dyn std
         .header("Referer", "https://www.ons.gov.uk/")
         .header("Connection", "keep-alive")
         .header("DNT", "1")
+        .header("Upgrade-Insecure-Requests", "1")
+        .header("Sec-Fetch-Site", "none")
+        .header("Sec-Fetch-Mode", "navigate")
+        .header("Sec-Fetch-User", "?1")
+        .header("Sec-Fetch-Dest", "document")
         .body("Some additional body content to simulate real traffic") 
         .send()
         .await?;

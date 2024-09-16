@@ -6,9 +6,13 @@ edition = "2021"
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 reqwest = { version = "0.12", features = ["cookies", "json", "rustls-tls"] }
-tokio-postgres = "0.7"
+tokio-postgres = "0.7.11"
 sqlx = { version = "0.8", features = ["postgres", "runtime-tokio-native-tls", "macros"] }
 dotenv = "0.15"  # Optional if you use environment variables
 serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.9"  # This is the YAML deserialization library
+serde_yaml = "0.9.32"  # This is the YAML deserialization library
 futures = "0.3"
+
+fantoccini = "0.21.1"
+serde_json = "1.0"
+anyhow = "1.0"
