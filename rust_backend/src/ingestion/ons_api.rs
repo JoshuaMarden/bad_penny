@@ -2,11 +2,11 @@
 
 
 use tokio;
-use reqwest::cookie::Jar;
 use std::sync::Arc;
 use reqwest::Client;
 use reqwest::Url;
 use reqwest::header::{USER_AGENT, ACCEPT};
+use reqwest::cookie::{Jar, CookieStore};
 use reqwest::Error;
 use reqwest::get;
 use sqlx::postgres::PgPoolOptions;
@@ -16,6 +16,7 @@ use std::collections::HashMap;
 use std::fs;
 use serde::Deserialize;
 use serde_yaml;
+use hyper::Uri;
 
 use crate::config; // gets the module
 use crate::config::Config; // gets the struct `Config`
@@ -62,38 +63,64 @@ pub fn use_config_data() -> Result<(), Box<dyn std::error::Error>> {
 ///
 /// A `Client` with cookies enabled for reuse in other functions.
 pub async fn send_spoofed_request(config: &Config) -> Result<Client, Box<dyn std::error::Error>> {
-    // Step 1: Set up the HTTP client with cookie support
+    // Step 1: Set up the cookie jar and client
     let cookie_jar = Arc::new(Jar::default());
+
+    // Use rustls for TLS
     let client = Client::builder()
-        .cookie_store(true)
-        .cookie_provider(cookie_jar.clone())
+        .cookie_provider(cookie_jar.clone())  // Attach the cookie jar
+        .use_rustls_tls()  // Ensure rustls is used for TLS connections
         .build()?;
 
-    // Step 2: Use the URL from the passed-in config
+    // Step 2: Use the URL from the config
     let url = config.ons_website.parse::<Url>()?;
 
-    // Step 3: Use headers from the config (User-Agent and Accept)
+    // Step 3: Send the request with headers
     let response = client
         .get(url.clone())
         .header("User-Agent", &config.browser_emulation_details.user_agent)
         .header("Accept", &config.browser_emulation_details.accept_response)
         .header("Referer", "https://www.ons.gov.uk/")
         .header("Connection", "keep-alive")
-        .header("DNT", "1")
+        .header("Accept-Encoding", "gzip, deflate, br")
+        .header("Accept-Language", "en-US,en;q=0.9")
+        .header("Cache-Control", "no-cache")
+        .header("Pragma", "no-cache")
         .header("Upgrade-Insecure-Requests", "1")
+        .header("DNT", "1")
         .header("Sec-Fetch-Site", "none")
         .header("Sec-Fetch-Mode", "navigate")
         .header("Sec-Fetch-User", "?1")
         .header("Sec-Fetch-Dest", "document")
-        .body("Some additional body content to simulate real traffic") 
+        .header("Sec-Ch-Ua", "\"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\", \";Not A Brand\";v=\"99\"")
+        .header("Sec-Ch-Ua-Mobile", "?0")
+        .header("Sec-Ch-Ua-Platform", "\"Windows\"")
+        .header("Sec-Ch-UA-Platform-Version", "10.0.0")
+        .header("Sec-Ch-UA-Arch", "\"x86\"")
+        .header("Sec-Ch-UA-Full-Version-List", "\"91.0.4472.114\"")
+        .header(
+            "Cookie",
+            "__cf_bm=sU0O_GGme3twy3BIhP4C4c9E8p1NNUPNNIjXK76kJfI-1726505917-1.0.1.1-WO2BaXduG8naVJLlCN9Hn0dzzQHkNpyhyvpsa35jvz.zjd4_5mebZYZCrkt3cMm3UaHd2N6Okwg4pfIGK7b0SA;\
+             _cfuvid=pzY4Y0XKZWPgpysi6mN9ghlBV4L7BFRUHkczH0Y2e.o-1726494065566-0.0.1.1-604800000;\
+             ab_test=%7B%22dp-frontend-search-controller%22%3A%7B%22new%22%3A%222024-09-06T13%3A40%3A11%22%2C%22old%22%3A%222024-09-05T13%3A40%3A11%22%7D%7D;\
+             cf_clearance=8iWss0i6Ii2NwSrlqdv4ZqhCAIlxe9StcLzCnqXgAKI-1726579698-1.2.1.1-h4vmYwi3Lvn8xxqogyjlfnPK7Yr7qqVb.8roqIwt.hXDLCwj2_QWcFF7LyNgrdyVx9w3g9TVFk2QPstnsj_ik8ghQMNKeDJow1cEe4lboku9u4ubryMK5"
+        )
+        .body("Some additional body content to simulate real traffic")
         .send()
         .await?;
 
-    // Handle the response (check for success)
+    // Check the response status
     if response.status().is_success() {
         println!("Initial spoofed request successful.");
     } else {
-        println!("Initial spoofed request failed.");
+        println!("Initial spoofed request failed: {:?}", response.status());
+    }
+
+    // Step 4: Inspect and print cookies after the request
+    if let Some(cookies) = cookie_jar.cookies(&url) {  // Use &url instead of &uri
+        println!("Stored cookies: {:?}", cookies);
+    } else {
+        println!("No cookies stored.");
     }
 
     // Return the client with cookie support
